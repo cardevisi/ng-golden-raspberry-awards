@@ -1,0 +1,24 @@
+.grid-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.table-container .table-title {
+  margin-bottom: 1px;
+  margin-top: 10px;
+  padding-left: 10px;
+  text-align: left;
+  background-color: #cfcfcf;
+}
+
+.table-container .table-title h4 {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-size: 1rem;
+}
+
+
+
