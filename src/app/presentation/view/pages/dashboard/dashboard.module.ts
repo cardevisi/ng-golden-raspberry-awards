@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { MatTableModule } from '@angular/material/table';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [DashboardComponent],
@@ -12,6 +13,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     DashboardRoutingModule,
     MatTableModule,
     MatGridListModule,
+    MatProgressBarModule,
   ],
 })
 export class DashboardModule {}

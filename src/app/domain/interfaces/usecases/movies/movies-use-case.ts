@@ -8,4 +8,8 @@ export abstract class IMoviesUseCase {
     year,
     winnerStatus,
   }: GetMovieProps): Observable<any>;
+  abstract getMultipleWinnersByYear(): Observable<any>;
+  abstract getStudiosWithWinCount(): Observable<any>;
+  abstract getMaxAndMinWinnersIntervalForProducers(): Observable<any>;
+  abstract getMoviesByYear(winner: boolean, year: string): Observable<any>;
 }

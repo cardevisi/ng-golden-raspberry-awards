@@ -8,8 +8,8 @@ export abstract class IMoviesController {
     year,
     winnerStatus,
   }: GetMovieProps): Observable<any>;
-  // abstract getMultipleWinnersByYear(): Observable<any>;
-  // abstract getStudiosWithWinCount(year: number): Observable<any>;
-  // abstract getMaxMinWinIntervalForProducers(): Observable<any>;
-  // abstract getMoviesByYear(winner: boolean, year: string): Observable<any>;
+  abstract getMultipleWinnersByYear(): Observable<any>;
+  abstract getStudiosWithWinCount(): Observable<any>;
+  abstract getMaxAndMinWinnersIntervalForProducers(): Observable<any>;
+  abstract getMoviesByYear(winner: boolean, year: string): Observable<any>;
 }

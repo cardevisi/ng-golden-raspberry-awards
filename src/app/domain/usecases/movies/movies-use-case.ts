@@ -9,6 +9,18 @@ import { Injectable } from '@angular/core';
 })
 export class MoviesUseCase implements IMoviesUseCase {
   constructor(private movieRepository: IMoviesRepository) {}
+  getMultipleWinnersByYear(): Observable<any> {
+    return this.movieRepository.getMultipleWinnersByYear();
+  }
+  getStudiosWithWinCount(): Observable<any> {
+    return this.movieRepository.getStudiosWithWinCount();
+  }
+  getMaxAndMinWinnersIntervalForProducers(): Observable<any> {
+    return this.movieRepository.getMaxAndMinWinnersIntervalForProducers();
+  }
+  getMoviesByYear(winner: boolean, year: string): Observable<any> {
+    return this.movieRepository.getMoviesByYear(winner, year);
+  }
   getMovies({
     page,
     size,

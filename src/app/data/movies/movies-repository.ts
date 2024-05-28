@@ -11,6 +11,38 @@ import { environment } from '../../../environments/environment';
 })
 export class MoviesRepository implements IMoviesRepository {
   constructor(private http: HttpClient) {}
+  getMultipleWinnersByYear(): Observable<any> {
+    const url = `${environment.serverUrl}?projection=years-with-multiple-winners`;
+    return this.http.get(url).pipe(
+      map((winners) => {
+        return winners;
+      })
+    );
+  }
+  getStudiosWithWinCount(): Observable<any> {
+    const url = `${environment.serverUrl}?projection=studios-with-win-count`;
+    return this.http.get(url).pipe(
+      map((studiosWithWinCount) => {
+        return studiosWithWinCount;
+      })
+    );
+  }
+  getMaxAndMinWinnersIntervalForProducers(): Observable<any> {
+    const url = `${environment.serverUrl}?projection=max-min-win-interval-for-producers`;
+    return this.http.get(url).pipe(
+      map((maxAndMinWinnersIntervalForProducers) => {
+        return maxAndMinWinnersIntervalForProducers;
+      })
+    );
+  }
+  getMoviesByYear(winner: boolean, year: string): Observable<any> {
+    const url = `${environment.serverUrl}?winner=${winner}&year=${year}`;
+    return this.http.get(url).pipe(
+      map((moviesByYear) => {
+        return moviesByYear;
+      })
+    );
+  }
 
   getMovies({
     page,

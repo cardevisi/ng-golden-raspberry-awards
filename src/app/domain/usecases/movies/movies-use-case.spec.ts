@@ -19,7 +19,6 @@ describe('MoviesUseCase', () => {
     }).compileComponents();
 
     moviesUseCase = TestBed.inject(MoviesUseCase as any);
-    console.log(moviesUseCase);
   });
 
   it('should be created', () => {

@@ -9,6 +9,18 @@ import { IMoviesUseCase } from '../../../domain/interfaces/usecases/movies/movie
 })
 export class MovieControllerService implements IMoviesController {
   constructor(private movieUseCase: IMoviesUseCase) {}
+  getMultipleWinnersByYear(): Observable<any> {
+    return this.movieUseCase.getMultipleWinnersByYear();
+  }
+  getStudiosWithWinCount(): Observable<any> {
+    return this.movieUseCase.getStudiosWithWinCount();
+  }
+  getMaxAndMinWinnersIntervalForProducers(): Observable<any> {
+    return this.movieUseCase.getMaxAndMinWinnersIntervalForProducers();
+  }
+  getMoviesByYear(winner: boolean, year: string): Observable<any> {
+    return this.movieUseCase.getMoviesByYear(winner, year);
+  }
   getMovies({
     page,
     size,
