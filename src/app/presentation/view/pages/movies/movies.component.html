@@ -2,6 +2,9 @@
   <div class="table-title">
     <h4>List movies</h4>
   </div>
+  <div *ngIf="isLoading">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
   <div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
       <!-- Id Column -->
