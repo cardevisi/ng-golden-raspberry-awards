@@ -1,4 +1,17 @@
-<main class="main">
-  <div class="content"></div>
+<main class="container">
+  <section class="left-panel">
+    <nav class="nav-menu">
+      <span class="nav-link">
+        <a routerLink="/dashboard">Dashboard</a>
+      </span>
+      <span class="nav-link">
+        <a routerLink="/movies">Movies</a>
+      </span>
+    </nav>
+  </section>
+  <section class="right-panel">
+    <app-toolbar></app-toolbar>
+    <router-outlet></router-outlet>
+  </section>
 </main>
-<router-outlet />
+
