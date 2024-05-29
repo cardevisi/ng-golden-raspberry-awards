@@ -2,11 +2,16 @@
   <mat-drawer-container [hasBackdrop]="sideDrawerHasBackdrop" class="sidedrawer-container">
     <mat-drawer #sidedrawer [(opened)]="sideDrawerOpened" [mode]="$any(sideDrawerMode)">
       <section class="left-panel">
+        <h4 class="sidedrawer-title">Menu:</h4>
         <nav class="nav-menu">
+          <mat-divider class="sidedrawer-divider"></mat-divider>
           <span class="nav-link">
+            <mat-icon color="primary">dashboard</mat-icon>
             <a routerLink="/dashboard">Dashboard</a>
           </span>
+          <mat-divider class="sidedrawer-divider"></mat-divider>
           <span class="nav-link">
+            <mat-icon color="primary">movies</mat-icon>
             <a routerLink="/movies">Movies</a>
           </span>
         </nav>
