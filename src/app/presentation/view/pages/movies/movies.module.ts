@@ -4,6 +4,7 @@ import { MoviesComponent } from './movies.component';
 import { MoviesRoutingModule } from './movies-routing.module';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [MoviesComponent],
@@ -12,6 +13,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MoviesRoutingModule,
     MatTableModule,
     MatProgressBarModule,
+    MatCardModule,
   ],
 })
 export class MoviesModule {}

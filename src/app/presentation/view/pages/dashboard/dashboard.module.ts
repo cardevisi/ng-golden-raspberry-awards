@@ -6,6 +6,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { SearchInputComponent } from '../../shared/search-input/search-input.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [DashboardComponent],
@@ -16,6 +17,7 @@ import { SearchInputComponent } from '../../shared/search-input/search-input.com
     MatGridListModule,
     MatProgressBarModule,
     SearchInputComponent,
+    MatCardModule,
   ],
 })
 export class DashboardModule {}
