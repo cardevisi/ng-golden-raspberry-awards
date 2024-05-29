@@ -6,25 +6,25 @@
 }
 
 .table-container .table-title {
-  margin-bottom: 1px;
-  margin-top: 10px;
+  // margin-bottom: 1px;
+  // margin-top: 10px;
   padding-left: 10px;
   text-align: left;
-}
 
-.table-container .table-title h4 {
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  font-size: 1rem;
-}
+  .table-title h4 {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-size: 1rem;
+  }
 
-.table-container .search-container {
-  width: 100%;
-}
+  .search-container {
+    width: 100%;
 
-.table-container .search-container input {
-  width: 100%;
+    input {
+      width: 100%;
+    }
+  }
 }
 
 .mat-mdc-header-row {
