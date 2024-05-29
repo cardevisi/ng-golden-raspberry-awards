@@ -1,17 +1,23 @@
 <main class="container">
-  <section class="left-panel">
-    <nav class="nav-menu">
-      <span class="nav-link">
-        <a routerLink="/dashboard">Dashboard</a>
-      </span>
-      <span class="nav-link">
-        <a routerLink="/movies">Movies</a>
-      </span>
-    </nav>
-  </section>
-  <section class="right-panel">
-    <app-toolbar></app-toolbar>
-    <router-outlet></router-outlet>
-  </section>
+  <mat-drawer-container [hasBackdrop]="sideDrawerHasBackdrop" class="sidedrawer-container">
+    <mat-drawer #sidedrawer [(opened)]="sideDrawerOpened" [mode]="$any(sideDrawerMode)">
+      <section class="left-panel">
+        <nav class="nav-menu">
+          <span class="nav-link">
+            <a routerLink="/dashboard">Dashboard</a>
+          </span>
+          <span class="nav-link">
+            <a routerLink="/movies">Movies</a>
+          </span>
+        </nav>
+      </section>
+    </mat-drawer>
+    <mat-drawer-content>
+      <section class="right-panel">
+        <app-toolbar [title]="titleToolbar" (onToggleSidenav)="onToggleSideDrawer($event)"></app-toolbar>
+        <router-outlet></router-outlet>
+      </section>
+    </mat-drawer-content>
+  </mat-drawer-container>
 </main>
 

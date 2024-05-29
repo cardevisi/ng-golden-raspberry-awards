@@ -7,6 +7,10 @@ import { DataModule } from './data/data.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { DomainModule } from './domain/domain.module';
 import { NgModule } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +21,10 @@ import { NgModule } from '@angular/core';
     DataModule,
     DomainModule,
     ToolbarComponent,
+    MatSidenavModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatButtonModule,
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],

@@ -7,9 +7,19 @@ import { Router } from '@angular/router';
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
+  showFiller = false;
+  sideDrawerHasBackdrop = true;
+  sideDrawerMode = 'over'; // 'side' | 'over' | 'push'
+  sideDrawerOpened = false;
+  titleToolbar = 'Golden Raspberry Awards';
+
   constructor(private router: Router) {}
+
   ngOnInit(): void {
     this.router.navigate(['/dashboard']);
   }
-  title = 'Ng Golden Raspberry Awards';
+
+  onToggleSideDrawer = (event: any) => {
+    this.sideDrawerOpened = !this.sideDrawerOpened;
+  };
 }
