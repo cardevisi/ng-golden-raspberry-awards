@@ -23,6 +23,6 @@ describe('AppComponent', () => {
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    expect(component.title).toEqual('Ng Golden Raspberry Awards');
+    expect(component.titleToolbar).toEqual('Golden Raspberry Awards');
   });
 });
