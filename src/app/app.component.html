@@ -20,7 +20,9 @@
     <mat-drawer-content>
       <section class="right-panel">
         <app-toolbar [title]="titleToolbar" (onToggleSidenav)="onToggleSideDrawer($event)"></app-toolbar>
-        <router-outlet></router-outlet>
+        <div class="router-outlet-container">
+          <router-outlet></router-outlet>
+        </div>
       </section>
     </mat-drawer-content>
   </mat-drawer-container>

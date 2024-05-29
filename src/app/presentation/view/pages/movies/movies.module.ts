@@ -5,6 +5,11 @@ import { MoviesRoutingModule } from './movies-routing.module';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatCardModule } from '@angular/material/card';
+import { PaginatorComponent } from '../../shared/paginator/paginator.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [MoviesComponent],
@@ -14,6 +19,11 @@ import { MatCardModule } from '@angular/material/card';
     MatTableModule,
     MatProgressBarModule,
     MatCardModule,
+    PaginatorComponent,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
   ],
 })
 export class MoviesModule {}

@@ -9,14 +9,14 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
   showFiller = false;
   sideDrawerHasBackdrop = true;
-  sideDrawerMode = 'over'; // 'side' | 'over' | 'push'
+  sideDrawerMode = 'push'; // 'side' | 'over' | 'push'
   sideDrawerOpened = false;
   titleToolbar = 'Golden Raspberry Awards';
 
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/movies']);
   }
 
   onToggleSideDrawer = (event: any) => {

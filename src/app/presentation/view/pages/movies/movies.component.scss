@@ -1,16 +1,7 @@
-.table-container .table-title {
-  margin-bottom: 1px;
-  padding: 10px 10px;
-  text-align: left;
-  font-family: "Roboto", sans-serif;
-  color: #000;
-}
-
-.table-container .table-title h4 {
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  font-size: 1rem;
+.mat-card-container {
+  .table-title {
+    margin-bottom: 20px;
+  }
 }
 
 .mat-mdc-header-row {

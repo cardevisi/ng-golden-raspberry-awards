@@ -13,26 +13,51 @@ import { finalize } from 'rxjs';
 export class MoviesComponent {
   constructor(private moviesController: IMoviesController) {}
 
+  currentPage: number = 1;
+  totalPages: number = 1;
+
   isLoading: boolean = false;
   displayedColumns: string[] = ['id', 'year', 'title', 'winner'];
   dataSource: MoviesData[] = [];
 
   ngOnInit(): void {
-    this.getMovies();
+    this.getMovies({
+      page: this.currentPage - 1,
+      year: '',
+    });
   }
 
-  getMovies() {
+  onPageChange(page: number) {
+    this.currentPage = page;
+    this.getMovies({
+      page: this.currentPage - 1,
+      year: '',
+    });
+  }
+
+  getMovies({
+    page = 0,
+    size = 10,
+    year = '',
+    winnerStatus = WinnerStatus.YES,
+  }: {
+    page?: number;
+    size?: number;
+    year?: string;
+    winnerStatus?: WinnerStatus;
+  }) {
     this.isLoading = true;
 
     this.moviesController
       .getMovies({
-        page: 0,
-        size: 1000,
-        year: '',
-        winnerStatus: WinnerStatus.YES,
+        page,
+        size,
+        year,
+        winnerStatus,
       })
       .pipe(finalize(() => (this.isLoading = false)))
       .subscribe((movies: any) => {
+        this.totalPages = movies.totalPages;
         this.dataSource = movies.content;
       });
   }

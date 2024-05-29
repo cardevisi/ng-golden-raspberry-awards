@@ -1,0 +1,41 @@
+.paginator-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+
+
+  .button-previous,
+    .button-next,
+    .button-first,
+    .button-last {
+
+    color: white;
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: #3f51b5;
+    margin-left: 1px;
+    cursor: pointer;
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    &.active {
+      background-color: #f44336;
+    }
+  }
+
+  .page-number {
+    color: white;
+    background-color: #3f51b5;
+    border: none;
+    cursor: pointer;
+    margin-left: 1px;
+
+    &.active {
+      background-color: #f44336;
+    }
+  }
+}

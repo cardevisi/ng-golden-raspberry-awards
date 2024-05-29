@@ -1,0 +1,17 @@
+<div class="paginator-container">
+  <button class="button-first" [class.active]="currentPage === 1" (click)="goToFirstPage()" [disabled]="currentPage === 1">
+    <mat-icon>first_page</mat-icon>
+  </button>
+  <button class="button-previous" (click)="goToPreviousPage()" [disabled]="currentPage === 1">
+    <mat-icon>chevron_left=</mat-icon>
+  </button>
+  <button class="page-number" [class.active]="currentPage === page" (click)="goToPage(page)" *ngFor="let page of listOfPages;  let i = index">
+    {{ page }}
+  </button>
+  <button class="button-next" (click)="goToNextPage()" [disabled]="currentPage === totalPages">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+  <button class="button-last" [class.active]="currentPage === totalPages" (click)="goToLastPage()" [disabled]="currentPage === totalPages">
+    <mat-icon>last_page</mat-icon>
+  </button>
+</div>
