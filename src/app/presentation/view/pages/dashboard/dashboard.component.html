@@ -104,10 +104,12 @@
       </table>
     </div>
   </div>
-
   <div class="table-container">
     <div class="table-title">
       <h3>List movie winners by year</h3>
+    </div>
+    <div class="search-container">
+      <app-search-input (searchChange)="onSearchChange($event)"></app-search-input>
     </div>
     <div *ngIf="isMoviesByYear">
       <mat-progress-bar mode="indeterminate"></mat-progress-bar>

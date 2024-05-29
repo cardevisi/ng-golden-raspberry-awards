@@ -1,0 +1,7 @@
+<div class="search-input">
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Search by year</mat-label>
+    <input matInput pattern="[0-9]{4}" type="number" autocomplete="off"  placeholder="Ex. 2020" [(ngModel)]="searchValue" (input)="onSearchChange()" >
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+</div>

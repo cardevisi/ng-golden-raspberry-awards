@@ -13,6 +13,8 @@ import quickSortTopWinners from './utils/quick-sort-top-winners';
 export class DashboardComponent {
   TOP_WINNERS = 3;
 
+  searchValue: string = '';
+
   isLoadingMultipleWinnersByYear: boolean = false;
   isStudiosWithWinCount: boolean = false;
   isMoviesByYear: boolean = false;
@@ -43,8 +45,12 @@ export class DashboardComponent {
   ngOnInit(): void {
     this.getMultipleWinnersByYear();
     this.getStudiosWithWinCount(this.TOP_WINNERS);
-    this.getMoviesByYear(true, '1990');
     this.getMaxAndMinWinnersIntervalForProducers();
+  }
+
+  onSearchChange(value: string) {
+    this.getMoviesByYear(true, value);
+    this.searchValue = value;
   }
 
   getMultipleWinnersByYear() {
