@@ -5,17 +5,25 @@
   padding: 10px;
 }
 
-.table-container .table-title {
-  // margin-bottom: 1px;
-  // margin-top: 10px;
-  padding-left: 10px;
-  text-align: left;
+.table-container {
+
+  .mat-mdc-header-row {
+    background-color: #f5f5f5;
+  }
 
   .table-title h4 {
-    margin: 0;
-    padding: 0;
+    margin-bottom: 5px;
+    padding-left: 10px;
     text-align: left;
     font-size: 1rem;
+  }
+
+  .mat-mdc-row:nth-child(even){
+    background-color: #f5f5f5;
+  }
+
+  .mat-mdc-row:nth-child(odd){
+    background-color: #fff;
   }
 
   .search-container {
@@ -26,10 +34,5 @@
     }
   }
 }
-
-.mat-mdc-header-row {
-  background-color: #f5f5f5;
-}
-
 
 
