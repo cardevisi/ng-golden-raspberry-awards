@@ -10,6 +10,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { SearchInputComponent } from '../../shared/search-input/search-input.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [MoviesComponent],
@@ -24,6 +26,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
+    MatSelectModule,
+    SearchInputComponent,
   ],
 })
 export class MoviesModule {}

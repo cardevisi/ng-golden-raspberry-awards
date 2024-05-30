@@ -10,10 +10,18 @@
   .mat-mdc-row:nth-child(odd){
     background-color: #fff;
   }
+
+  .filter-column-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .mat-form-field-style {
+    margin-top: 20px;
+    margin-left: 10px;
+  }
 }
 
 .mat-mdc-header-row {
   background-color: #f5f5f5;
 }
-
-
