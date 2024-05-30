@@ -33,7 +33,7 @@ export class MoviesComponent {
       .pipe(debounceTime(this.DEBOUNCE_TIME))
       .subscribe((value) => {
         return this.getMovies({
-          page: this.currentPage - 1,
+          page: 0,
           year: this.yearFilter as string,
           winnerStatus: value as WinnerStatus,
         });
@@ -43,7 +43,7 @@ export class MoviesComponent {
       .pipe(debounceTime(this.DEBOUNCE_TIME))
       .subscribe((value) => {
         return this.getMovies({
-          page: this.currentPage - 1,
+          page: 0,
           year: value as string,
           winnerStatus: this.winnerFilter as WinnerStatus,
         });
