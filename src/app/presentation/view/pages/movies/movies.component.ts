@@ -58,6 +58,10 @@ export class MoviesComponent {
     });
   }
 
+  formatWinnerValue(winner: string) {
+    return winner.toString() === 'true' ? 'Yes' : 'No';
+  }
+
   getMovies({
     page = 0,
     size = 10,
@@ -85,7 +89,7 @@ export class MoviesComponent {
           id: movie.id,
           year: movie.year,
           title: movie.title,
-          winner: movie.winner.toString() === 'true' ? 'Yes' : 'No',
+          winner: this.formatWinnerValue(movie.winner.toString()),
         }));
       });
   }
