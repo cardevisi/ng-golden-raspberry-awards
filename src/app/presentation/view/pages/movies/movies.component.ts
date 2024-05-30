@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MoviesData } from './movies-data.interface';
 import { IMoviesController } from '../../../../domain/controllers/imovies-controller';
 import { WinnerStatus } from '../../../../domain/interfaces/winner-status';
-import { finalize } from 'rxjs';
+import { fromEvent, finalize, debounceTime, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-movies',
@@ -10,7 +10,9 @@ import { finalize } from 'rxjs';
   styleUrl: './movies.component.scss',
 })
 export class MoviesComponent {
-  constructor(private moviesController: IMoviesController) {}
+  DEBOUNCE_TIME = 1000;
+  debouncerWinner: Subject<string> = new Subject<string>();
+  debouncerYear: Subject<string> = new Subject<string>();
 
   yearFilter: string = '';
   winnerFilter: string = '';
@@ -25,6 +27,28 @@ export class MoviesComponent {
   isLoading: boolean = false;
   displayedColumns: string[] = ['id', 'year', 'title', 'winner'];
   dataSource: MoviesData[] = [];
+
+  constructor(private moviesController: IMoviesController) {
+    this.debouncerWinner
+      .pipe(debounceTime(this.DEBOUNCE_TIME))
+      .subscribe((value) => {
+        return this.getMovies({
+          page: this.currentPage - 1,
+          year: this.yearFilter as string,
+          winnerStatus: value as WinnerStatus,
+        });
+      });
+
+    this.debouncerYear
+      .pipe(debounceTime(this.DEBOUNCE_TIME))
+      .subscribe((value) => {
+        return this.getMovies({
+          page: this.currentPage - 1,
+          year: value as string,
+          winnerStatus: this.winnerFilter as WinnerStatus,
+        });
+      });
+  }
 
   ngOnInit(): void {
     this.getMovies({
@@ -43,19 +67,12 @@ export class MoviesComponent {
 
   onChangeWinnerFilter(winner: string) {
     this.winnerFilter = winner;
-    this.getMovies({
-      page: this.currentPage - 1,
-      year: '',
-      winnerStatus: winner as WinnerStatus,
-    });
+    this.debouncerWinner.next(winner);
   }
 
   onSearchChange(year: string) {
     this.yearFilter = year;
-    this.getMovies({
-      page: this.currentPage - 1,
-      year,
-    });
+    this.debouncerYear.next(year);
   }
 
   formatWinnerValue(winner: string) {
