@@ -62,7 +62,7 @@ export class MoviesComponent {
     page = 0,
     size = 10,
     year = '',
-    winnerStatus = WinnerStatus.YES,
+    winnerStatus = WinnerStatus.EMPTY,
   }: {
     page?: number;
     size?: number;
@@ -81,7 +81,12 @@ export class MoviesComponent {
       .pipe(finalize(() => (this.isLoading = false)))
       .subscribe((movies: any) => {
         this.totalPages = movies.totalPages;
-        this.dataSource = movies.content;
+        this.dataSource = movies.content.map((movie: any) => ({
+          id: movie.id,
+          year: movie.year,
+          title: movie.title,
+          winner: movie.winner.toString() === 'true' ? 'Yes' : 'No',
+        }));
       });
   }
 }
