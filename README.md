@@ -1,4 +1,4 @@
-# NgGoldenRaspberryAwards
+# Angular Golden Raspberry Awards
 
 This project is part of a technical challenge for a position as a front-end enginner, was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
 
