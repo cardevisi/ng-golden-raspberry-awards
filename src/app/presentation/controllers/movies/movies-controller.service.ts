@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IMoviesController } from '../../../domain/controllers/imovies-controller';
-import { GetMovieProps } from '../../../domain/interfaces/GoldenRaspberryAwardsGateway.types';
+import { GetMovieProps } from '../../../domain/entities/get-movie-props.types';
 import { IMoviesUseCase } from '../../../domain/interfaces/usecases/movies/movies-use-case';
 
 @Injectable({

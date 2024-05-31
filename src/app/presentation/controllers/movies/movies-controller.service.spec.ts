@@ -3,7 +3,7 @@ import { MovieControllerService } from './movies-controller.service';
 import { WinnerStatus } from '../../../domain/interfaces/winner-status';
 import { IMoviesUseCase } from '../../../domain/interfaces/usecases/movies/movies-use-case';
 import { Observable } from 'rxjs';
-import { GetMovieProps } from '../../../domain/interfaces/GoldenRaspberryAwardsGateway.types';
+import { GetMovieProps } from '../../../domain/entities/get-movie-props.types';
 
 describe('MovieControllerService', () => {
   let moviesController: MovieControllerService;

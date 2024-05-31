@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { GetMovieProps } from '../interfaces/GoldenRaspberryAwardsGateway.types';
+import { GetMovieProps } from '../entities/get-movie-props.types';
 
 export abstract class IMoviesController {
   abstract getMovies({

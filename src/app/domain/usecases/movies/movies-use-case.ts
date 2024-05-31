@@ -1,24 +1,32 @@
 import { Observable } from 'rxjs';
-import { GetMovieProps } from '../../interfaces/GoldenRaspberryAwardsGateway.types';
+import { GetMovieProps } from '../../entities/get-movie-props.types';
 import { IMoviesUseCase } from '../../interfaces/usecases/movies/movies-use-case';
-import { IMoviesRepository } from '../../interfaces/imovies-repository';
+import { IMoviesRepository } from '../../interfaces/repository/imovies-repository';
 import { Injectable } from '@angular/core';
+import { MoviesMultiplesWinnersByYearEntity } from '../../entities/movies-multiples-winners-by-year-entity';
+import { StudiosWithWinCountEntity } from '../../entities/studios-with-win-count-entity';
+import { MaxMinWinIntervalForProducersEntity } from '../../entities/max-min-win-interval-for-producers-entity';
+import { MoviesByYearEntity } from '../../entities/movies-by-year-entity';
+import { MoviesByPageEntity } from '../../entities/movies-by-page-entity';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MoviesUseCase implements IMoviesUseCase {
   constructor(private movieRepository: IMoviesRepository) {}
-  getMultipleWinnersByYear(): Observable<any> {
+  getMultipleWinnersByYear(): Observable<MoviesMultiplesWinnersByYearEntity> {
     return this.movieRepository.getMultipleWinnersByYear();
   }
-  getStudiosWithWinCount(): Observable<any> {
+  getStudiosWithWinCount(): Observable<StudiosWithWinCountEntity> {
     return this.movieRepository.getStudiosWithWinCount();
   }
-  getMaxAndMinWinnersIntervalForProducers(): Observable<any> {
+  getMaxAndMinWinnersIntervalForProducers(): Observable<MaxMinWinIntervalForProducersEntity> {
     return this.movieRepository.getMaxAndMinWinnersIntervalForProducers();
   }
-  getMoviesByYear(winner: boolean, year: string): Observable<any> {
+  getMoviesByYear(
+    winner: boolean,
+    year: string
+  ): Observable<MoviesByYearEntity> {
     return this.movieRepository.getMoviesByYear(winner, year);
   }
   getMovies({
@@ -26,7 +34,7 @@ export class MoviesUseCase implements IMoviesUseCase {
     size,
     year,
     winnerStatus,
-  }: GetMovieProps): Observable<any> {
+  }: GetMovieProps): Observable<MoviesByPageEntity> {
     return this.movieRepository.getMovies({ page, size, year, winnerStatus });
   }
 }

@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { TestBed } from '@angular/core/testing';
 import { MoviesUseCase } from './movies-use-case';
-import { IMoviesRepository } from '../../interfaces/imovies-repository';
+import { IMoviesRepository } from '../../interfaces/repository/imovies-repository';
 
 describe('MoviesUseCase', () => {
   let moviesUseCase: MoviesUseCase;

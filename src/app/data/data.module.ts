@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { MoviesRepository } from './movies/movies-repository';
-import { IMoviesRepository } from '../domain/interfaces/imovies-repository';
+import { IMoviesRepository } from '../domain/interfaces/repository/imovies-repository';
 
 @NgModule({
   declarations: [],

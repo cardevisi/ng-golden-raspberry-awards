@@ -1,4 +1,4 @@
-import { WinnerStatus } from './winner-status';
+import { WinnerStatus } from '../interfaces/winner-status';
 
 export type GetMovieProps = {
   page?: number;

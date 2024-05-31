@@ -1,4 +1,4 @@
-import { WinnerStatus } from './winner-status';
+import { WinnerStatus } from '../../../domain/interfaces/winner-status';
 
 export const convertWinnerStatusInBoolean = (winnerStatus: WinnerStatus) => {
   if (winnerStatus === WinnerStatus.YES) {
