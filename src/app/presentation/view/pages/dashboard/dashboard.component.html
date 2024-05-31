@@ -1,10 +1,8 @@
 <div class="grid-list">
   <mat-card>
     <mat-card-content>
+      <mat-card-title class="table-title">List years with multiple winners</mat-card-title>
       <div class="table-container">
-        <div class="table-title">
-          <h3>List years with multiple winners</h3>
-        </div>
         <div *ngIf="isLoadingMultipleWinnersByYear">
           <mat-progress-bar mode="indeterminate"></mat-progress-bar>
         </div>
@@ -30,10 +28,8 @@
 
   <mat-card>
     <mat-card-content>
+      <mat-card-title class="table-title">Top 3 studios winners</mat-card-title>
       <div class="table-container">
-        <div class="table-title">
-          <h3>Top 3 studios winners</h3>
-        </div>
         <div *ngIf="isStudiosWithWinCount">
           <mat-progress-bar mode="indeterminate"></mat-progress-bar>
         </div>
@@ -57,10 +53,8 @@
 
   <mat-card>
     <mat-card-content>
+      <mat-card-title class="table-title">Producers with longest and shortest interval between wins</mat-card-title>
       <div class="table-container">
-        <div class="table-title">
-          <h3>Producers with longest and shortest interval between wins</h3>
-        </div>
         <div *ngIf="isMaxAndMinWinnersIntervalForProducers">
           <mat-progress-bar mode="indeterminate"></mat-progress-bar>
         </div>
@@ -121,10 +115,8 @@
 
   <mat-card>
     <mat-card-content>
+      <mat-card-title class="table-title">List movie winners by year</mat-card-title>
       <div class="table-container">
-        <div class="table-title">
-          <h3>List movie winners by year</h3>
-        </div>
         <div class="search-container">
           <app-search-input inputMask="[0-9]{4}" label="Search by year" placeholder="Ex. 2019" (searchChange)="onSearchChange($event)"></app-search-input>
         </div>
