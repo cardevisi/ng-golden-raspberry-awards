@@ -19,6 +19,11 @@ export class AppComponent implements OnInit {
     this.router.navigate(['/movies']);
   }
 
+  goToPage = (page: string) => {
+    this.router.navigate([`/${page}`]);
+    this.sideDrawerOpened = false;
+  };
+
   onToggleSideDrawer = (event: any) => {
     this.sideDrawerOpened = !this.sideDrawerOpened;
   };

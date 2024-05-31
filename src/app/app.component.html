@@ -7,12 +7,12 @@
           <mat-divider class="sidedrawer-divider"></mat-divider>
           <span class="nav-link">
             <mat-icon color="primary">dashboard</mat-icon>
-            <a routerLink="/dashboard">Dashboard</a>
+            <a (click)="goToPage('dashboard')">Dashboard</a>
           </span>
           <mat-divider class="sidedrawer-divider"></mat-divider>
           <span class="nav-link">
             <mat-icon color="primary">movies</mat-icon>
-            <a routerLink="/movies">Movies</a>
+            <a (click)="goToPage('movies')">Movies</a>
           </span>
         </nav>
       </section>

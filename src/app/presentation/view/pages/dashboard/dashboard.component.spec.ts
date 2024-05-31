@@ -51,7 +51,7 @@ describe('DashboardComponent', () => {
     component.dataSourceStudiosWithWinCount = MOCK_TABLE_FOR_STUDIOS_WINNERS;
     fixture.detectChanges();
     const tableElement = fixture.nativeElement.querySelectorAll('table');
-    expect(tableElement[1]).toBeTruthy();
+    expect(tableElement[0]).toBeTruthy();
   });
 
   it('should render list movies by year', () => {
@@ -60,18 +60,17 @@ describe('DashboardComponent', () => {
     component.dataSourceMoviesByYear = MOCK_TABLE_FOR_MOVIES_BY_YEAR;
     fixture.detectChanges();
     const tableElement = fixture.nativeElement.querySelectorAll('table');
-    expect(tableElement[2]).toBeTruthy();
+    expect(tableElement[0]).toBeTruthy();
   });
 
-  xit('should render max and min interval for producers', () => {
+  it('should render max and min interval for producers', () => {
     fixture = TestBed.createComponent(DashboardComponent);
     component = fixture.componentInstance;
-    component.dataSourceMaxAndMinWinnersIntervalForProducers = {
-      max: MOCK_TABLE_FOR_MAX_AND_MIN_WINNERS_INTERVAL_FOR_PRODUCERS.max[0],
-      min: MOCK_TABLE_FOR_MAX_AND_MIN_WINNERS_INTERVAL_FOR_PRODUCERS.min[0],
-    };
+    component.dataSourceMaxAndMinWinnersIntervalForProducers =
+      MOCK_TABLE_FOR_MAX_AND_MIN_WINNERS_INTERVAL_FOR_PRODUCERS;
     fixture.detectChanges();
     const tableElement = fixture.nativeElement.querySelectorAll('table');
-    expect(tableElement[3]).toBeTruthy();
+    expect(tableElement[0]).toBeTruthy();
+    expect(tableElement[1]).toBeTruthy();
   });
 });
