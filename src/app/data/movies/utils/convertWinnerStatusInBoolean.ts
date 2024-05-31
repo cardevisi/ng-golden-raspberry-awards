@@ -1,4 +1,4 @@
-import { WinnerStatus } from '../../../domain/interfaces/winner-status';
+import { WinnerStatus } from '../../../presentation/view/shared/constants/winner-status';
 
 export const convertWinnerStatusInBoolean = (winnerStatus: WinnerStatus) => {
   if (winnerStatus === WinnerStatus.YES) {

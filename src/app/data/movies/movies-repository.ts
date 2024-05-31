@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { IMoviesRepository } from '../../domain/interfaces/repository/imovies-repository';
 import { Observable, map } from 'rxjs';
-import { GetMovieProps } from '../../domain/entities/get-movie-props.types';
 import { convertWinnerStatusInBoolean } from './utils/convertWinnerStatusInBoolean';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
@@ -10,6 +9,7 @@ import { MoviesMultiplesWinnersByYearEntity } from '../../domain/entities/movies
 import { MaxMinWinIntervalForProducersEntity } from '../../domain/entities/max-min-win-interval-for-producers-entity';
 import { MoviesByYearEntity } from '../../domain/entities/movies-by-year-entity';
 import { MoviesByPageEntity } from '../../domain/entities/movies-by-page-entity';
+import { GetMovieProps } from '../../presentation/view/shared/types/get-movie-props.types';
 
 @Injectable({
   providedIn: 'root',

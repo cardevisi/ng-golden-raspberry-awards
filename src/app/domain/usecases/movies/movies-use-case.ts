@@ -1,5 +1,4 @@
 import { Observable } from 'rxjs';
-import { GetMovieProps } from '../../entities/get-movie-props.types';
 import { IMoviesUseCase } from '../../interfaces/usecases/movies/movies-use-case';
 import { IMoviesRepository } from '../../interfaces/repository/imovies-repository';
 import { Injectable } from '@angular/core';
@@ -8,6 +7,7 @@ import { StudiosWithWinCountEntity } from '../../entities/studios-with-win-count
 import { MaxMinWinIntervalForProducersEntity } from '../../entities/max-min-win-interval-for-producers-entity';
 import { MoviesByYearEntity } from '../../entities/movies-by-year-entity';
 import { MoviesByPageEntity } from '../../entities/movies-by-page-entity';
+import { GetMovieProps } from '../../../presentation/view/shared/types/get-movie-props.types';
 
 @Injectable({
   providedIn: 'root',

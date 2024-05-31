@@ -1,9 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 import { MovieControllerService } from './movies-controller.service';
-import { WinnerStatus } from '../../../domain/interfaces/winner-status';
+import { WinnerStatus } from '../../view/shared/constants/winner-status';
 import { IMoviesUseCase } from '../../../domain/interfaces/usecases/movies/movies-use-case';
 import { Observable } from 'rxjs';
-import { GetMovieProps } from '../../../domain/entities/get-movie-props.types';
+import { GetMovieProps } from '../../view/shared/types/get-movie-props.types';
 
 describe('MovieControllerService', () => {
   let moviesController: MovieControllerService;
