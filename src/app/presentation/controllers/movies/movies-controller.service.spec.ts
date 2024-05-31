@@ -12,6 +12,10 @@ describe('MovieControllerService', () => {
   beforeEach(() => {
     moviesUseCaseSpy = jasmine.createSpyObj('IMoviesUseCase', {
       getMovies: new Observable(),
+      getMultipleWinnersByYear: new Observable(),
+      getStudiosWithWinCount: new Observable(),
+      getMaxAndMinWinnersIntervalForProducers: new Observable(),
+      getMoviesByYear: new Observable(),
     });
 
     TestBed.configureTestingModule({
@@ -36,5 +40,29 @@ describe('MovieControllerService', () => {
     moviesController.getMovies(mockParams);
 
     expect(moviesUseCaseSpy.getMovies).toHaveBeenCalled();
+    expect(moviesUseCaseSpy.getMovies).toHaveBeenCalledWith(mockParams);
+  });
+
+  it('should call the method getMultipleWinnersByYear', () => {
+    moviesController.getMultipleWinnersByYear();
+    expect(moviesUseCaseSpy.getMultipleWinnersByYear).toHaveBeenCalled();
+  });
+
+  it('should call the method getStudiosWithWinCount', () => {
+    moviesController.getStudiosWithWinCount();
+    expect(moviesUseCaseSpy.getStudiosWithWinCount).toHaveBeenCalled();
+  });
+
+  it('should call the method getMaxAndMinWinnersIntervalForProducers', () => {
+    moviesController.getMaxAndMinWinnersIntervalForProducers();
+    expect(
+      moviesUseCaseSpy.getMaxAndMinWinnersIntervalForProducers
+    ).toHaveBeenCalled();
+  });
+
+  it('should call the method getMoviesByYear', () => {
+    moviesController.getMoviesByYear(true, '1988');
+    expect(moviesUseCaseSpy.getMoviesByYear).toHaveBeenCalled();
+    expect(moviesUseCaseSpy.getMoviesByYear).toHaveBeenCalledWith(true, '1988');
   });
 });

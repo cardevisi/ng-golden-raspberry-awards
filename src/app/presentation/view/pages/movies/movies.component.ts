@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MoviesData } from './movies-data.interface';
 import { IMoviesController } from '../../../../domain/controllers/imovies-controller';
 import { WinnerStatus } from '../../shared/constants/winner-status';
-import { fromEvent, finalize, debounceTime, Subject } from 'rxjs';
+import { finalize, debounceTime, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-movies',

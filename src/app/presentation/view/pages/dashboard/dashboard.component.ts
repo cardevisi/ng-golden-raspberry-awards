@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { MoviesData } from '../movies/movies-data.interface';
-import { DATA_TABLE } from '../../../../data/movies/movies-data-table';
 import { IMoviesController } from '../../../../domain/controllers/imovies-controller';
-import { finalize } from 'rxjs';
+import { Subject, finalize, debounceTime } from 'rxjs';
 import quickSortTopWinners from './utils/quick-sort-top-winners';
 
 @Component({
@@ -12,6 +10,7 @@ import quickSortTopWinners from './utils/quick-sort-top-winners';
 })
 export class DashboardComponent {
   TOP_WINNERS = 3;
+  DEBOUNCE_TIME = 300;
 
   searchValue: string = '';
 
@@ -22,13 +21,10 @@ export class DashboardComponent {
 
   displayedColumnsForMultipleWinnersByYear: string[] = ['year', 'winnerCount'];
   dataSourceMultipleWinnersByYear: any;
-
   displayedColumnsStudiosWithWinCount: string[] = ['name', 'winCount'];
   dataSourceStudiosWithWinCount: any;
-
   displayedColumnsForMoviesByYear: string[] = ['id', 'year', 'title'];
   dataSourceMoviesByYear: any;
-
   displayedColumnsForMaxMinWinIntervalForProducers: string[] = [
     'producer',
     'interval',
@@ -40,7 +36,15 @@ export class DashboardComponent {
     min: [],
   };
 
-  constructor(readonly moviesController: IMoviesController) {}
+  debouncerWinnersByYear: Subject<string> = new Subject<string>();
+
+  constructor(readonly moviesController: IMoviesController) {
+    this.debouncerWinnersByYear
+      .pipe(debounceTime(this.DEBOUNCE_TIME))
+      .subscribe((value) => {
+        return this.getMoviesByYear(true, value);
+      });
+  }
 
   ngOnInit(): void {
     this.getMultipleWinnersByYear();
@@ -49,8 +53,8 @@ export class DashboardComponent {
   }
 
   onSearchChange(value: string) {
-    this.getMoviesByYear(true, value);
     this.searchValue = value;
+    this.debouncerWinnersByYear.next(this.searchValue);
   }
 
   getMultipleWinnersByYear() {
